@@ -6,6 +6,7 @@ terraform {
     }
   }
 }
+
 locals {
   repository_name = "tbtips"
   github_owner    = "codestorm1"
