@@ -3,6 +3,16 @@ defmodule Tbtips.MixProject do
 
   def project do
     [
+      releases: [
+        tbtips: [
+          version: "0.1.0",
+          applications: [
+            tbtips: :permanent
+          ],
+          # Optional: include additional steps or configurations
+          steps: [:assemble, :tar]
+        ]
+      ],
       app: :tbtips,
       version: "0.1.0",
       elixir: "~> 1.14",
