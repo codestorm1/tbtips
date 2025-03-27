@@ -21,6 +21,8 @@ RUN mix local.hex --force && \
 # set build ENV
 ENV MIX_ENV=prod
 
+WORKDIR /app
+
 # install mix dependencies
 COPY mix.exs mix.lock ./
 RUN mix deps.get --only $MIX_ENV
@@ -61,7 +63,6 @@ ENV LANG="en_US.UTF-8"
 ENV LANGUAGE="en_US:en"
 ENV LC_ALL="en_US.UTF-8"
 
-WORKDIR /app
 RUN chown nobody /app
 
 # set runner ENV
