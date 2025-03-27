@@ -17,7 +17,7 @@ jobs:
       MIX_ENV: test
     services:
       postgres:
-        image: postgres:15.2
+        image: postgres:16.8
         env:
           POSTGRES_PASSWORD: postgres
         ports:
