@@ -10,7 +10,7 @@ services:
       restart_policy:
         condition: on-failure
         delay: 5s
-        max_attempts: 1
+        max_attempts: 3
         window: 120s
     environment:
       POSTGRES_PASSWORD: postgres
