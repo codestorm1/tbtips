@@ -31,7 +31,7 @@ services:
         max_attempts: 3
         window: 120s
     environment:
-      PHX_SERVER: true
+      PHX_SERVER: "true"
       DATABASE_URL: ecto://postgres:postgres@db:5432/postgres
       SECRET_KEY_BASE: jgsNhkSB9xtSG2fWxW9/gzYWhq+NkdleihelgBX1OKsE6GdSwqH4R1LVCDvpmXej
       PHX_HOST: localhost
@@ -39,8 +39,8 @@ services:
     ports:
       - "4000:4000"
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+        # condition: service_healthy
 
 volumes:
   db_data:
