@@ -1,14 +1,11 @@
 import Config
 
 config :tbtips, Tbtips.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "tbtips_dev",
-  stacktrace: true,
-  # Connect from local to Docker
+  username: System.get_env("DB_USERNAME") || "postgres",
+  password: System.get_env("DB_PASSWORD") || "postgres",
+  database: System.get_env("DATABASE_URL"),
   hostname: "localhost",
-  port: 5432,
-  pool_size: 10
+  pool_size: 15
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
