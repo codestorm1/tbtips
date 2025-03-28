@@ -14,10 +14,9 @@ services:
         window: 120s
     environment:
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
-      PGDATA: /var/lib/postgresql/data/pgdata
-    volumes: 
-      - db_data:/var/lib/postgresql/data/pgdata
+      POSTGRES_DB: tbtips_dev
+    volumes:
+      - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   web:

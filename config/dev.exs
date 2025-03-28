@@ -1,13 +1,13 @@
 import Config
 
-# Configure your database
 config :tbtips, Tbtips.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
   database: "tbtips_dev",
   stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
+  # Connect from local to Docker
+  hostname: "localhost",
+  port: 5432,
   pool_size: 10
 
 # For development, we disable any cache and enable
