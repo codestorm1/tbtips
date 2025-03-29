@@ -61,6 +61,8 @@ RUN mix compile
 COPY config/runtime.exs config/
 
 COPY rel rel
+
+RUN mix ecto.create && mix ecto.migrate
 RUN mix release
 
 # start a new build stage so that the final image will only contain
@@ -68,7 +70,7 @@ RUN mix release
 FROM ${RUNNER_IMAGE}
 
 RUN apt-get update -y && \
-  apt-get install -y libstdc++6 openssl libncurses5 locales ca-certificates dnsutils \
+  apt-get install -y libstdc++6 openssl libncurses5 locales ca-certificates dnsutils postgresql-client \
   && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # RUN apt-get update && apt-get install -y dnsutils
