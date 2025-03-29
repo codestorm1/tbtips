@@ -7,6 +7,10 @@ import Config
 # before starting your production server.
 config :tbtips, TbtipsWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
 
+config :tbtips, Tbtips.Repo,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
+
 # Configures Swoosh API Client
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Tbtips.Finch
 

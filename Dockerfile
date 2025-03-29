@@ -57,6 +57,9 @@ RUN mix assets.deploy
 # Compile the release
 RUN mix compile
 
+# Run DB migrations
+RUN mix ecto.migrate --quiet
+
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
 
