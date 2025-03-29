@@ -11,9 +11,9 @@ config :tbtips, TbtipsWeb.Endpoint,
   server: true
 
 config :tbtips, Tbtips.Repo,
-  cache_static_manifest: "priv/static/cache_manifest.json",
-  username: System.get_env("DB_USERNAME") || "postgres",
-  password: System.get_env("DB_PASSWORD") || "postgres",
+  # cache_static_manifest: "priv/static/cache_manifest.json",
+  # username: System.get_env("DB_USERNAME") || "tbtips",
+  # password: System.get_env("DB_PASSWORD") || "fuckflyio",
   database: System.get_env("DATABASE_URL"),
   hostname: "localhost",
   pool_size: 15
