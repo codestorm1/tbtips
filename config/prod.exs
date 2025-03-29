@@ -8,12 +8,12 @@ import Config
 
 config :tbtips, TbtipsWeb.Endpoint,
   http: [port: 8080, ip: {0, 0, 0, 0}],
+  https: [port: 443],
   server: true
 
 config :tbtips, Tbtips.Repo,
   url: System.get_env("DATABASE_URL"),
-  pool_size: 15,
-  ssl: true
+  pool_size: 15
 
 # Configures Swoosh API Client
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Tbtips.Finch
