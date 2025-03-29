@@ -1,11 +1,14 @@
 import Config
 
+# Configure your database
 config :tbtips, Tbtips.Repo,
-  username: System.get_env("DB_USERNAME") || "postgres",
-  password: System.get_env("DB_PASSWORD") || "postgres",
-  database: System.get_env("DATABASE_URL"),
+  username: "postgres",
+  password: "postgres",
   hostname: "localhost",
-  pool_size: 15
+  database: "tbtips_dev",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -20,7 +23,7 @@ config :tbtips, TbtipsWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "PfHbXllronKsa/CgRH88h4W4MWB55/MzpJqT8rAWpPO1I4Yeo6BHJDcMttNg6KGQ",
+  secret_key_base: "DVFleeqzmSZ5Vp2FD8pmvI4FN/GBtQD2eorFMFa4ANxRD0Sd0lCoPSOR/lXaQCey",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:tbtips, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:tbtips, ~w(--watch)]}

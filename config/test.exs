@@ -17,7 +17,7 @@ config :tbtips, Tbtips.Repo,
 # you can enable the server option below.
 config :tbtips, TbtipsWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "GOxdN1Brjxl7sqnOjOq99I67gt1koV/uH0Ma9qUx9mtkelGT2jhVTegZn64hWmtq",
+  secret_key_base: "08UyotRm5/BSyAxkmJn6YiQEnBNn5Lo6WCGG8crv7zvFSXisO6iZQG0udxz2/Lcp",
   server: false
 
 # In test we don't send emails

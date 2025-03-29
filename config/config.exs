@@ -20,7 +20,7 @@ config :tbtips, TbtipsWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Tbtips.PubSub,
-  live_view: [signing_salt: "8Qjy0eQV"]
+  live_view: [signing_salt: "ZMZ0GoDP"]
 
 # Configures the mailer
 #
