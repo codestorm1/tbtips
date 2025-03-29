@@ -11,12 +11,9 @@ config :tbtips, TbtipsWeb.Endpoint,
   server: true
 
 config :tbtips, Tbtips.Repo,
-  # cache_static_manifest: "priv/static/cache_manifest.json",
-  # username: System.get_env("DB_USERNAME") || "tbtips",
-  # password: System.get_env("DB_PASSWORD") || "fuckflyio",
-  database: System.get_env("DATABASE_URL"),
-  hostname: "localhost",
-  pool_size: 15
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 15,
+  ssl: true
 
 # Configures Swoosh API Client
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Tbtips.Finch
