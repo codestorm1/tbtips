@@ -58,7 +58,7 @@ RUN mix assets.deploy
 RUN mix compile
 
 # Run DB migrations
-RUN mix ecto.migrate --quiet
+# RUN mix ecto.migrate --quiet
 
 # Changes to config/runtime.exs don't require recompiling the code
 COPY config/runtime.exs config/
@@ -89,6 +89,8 @@ RUN chown nobody /app
 
 # set runner ENV
 ENV MIX_ENV="prod"
+
+RUN echo "DATABASE_URL is: $DATABASE_URL"
 
 # Only copy the final release from the build stage
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/tbtips ./
